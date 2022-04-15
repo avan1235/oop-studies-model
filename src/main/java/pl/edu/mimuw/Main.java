@@ -41,6 +41,7 @@ public class Main {
     System.out.println(mim);
 
     StaffMember jakub = PersonFactory.makeStaffMember("Jakub Zapomniany");
+    jakub.teachNewSubject(po);
 
     System.out.println(Faculty.getPersonInfoById("STAFF4"));
   }

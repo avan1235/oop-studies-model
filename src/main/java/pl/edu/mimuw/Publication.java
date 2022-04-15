@@ -6,8 +6,8 @@ import java.util.Set;
 
 public class Publication {
   private final String title;
-  private String publicationAbstract;
   private final Set<StaffMember> authors;
+  private String publicationAbstract;
 
   public Publication(String title, String publicationAbstract, StaffMember[] authors) {
     this.title = title;
@@ -48,6 +48,11 @@ public class Publication {
 
   @Override
   public String toString() {
-    return this.getAuthorList() + "- " + this.title + ". Abstract: \"" + this.publicationAbstract + "\"";
+    StringBuilder res = new StringBuilder();
+    res.append(this.getAuthorList()).append("- ");
+    res.append(this.title);
+    if (this.publicationAbstract != null)
+      res.append(". Abstract: \"").append(this.publicationAbstract).append("\"");
+    return res.toString();
   }
 }

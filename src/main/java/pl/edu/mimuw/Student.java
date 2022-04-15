@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Student extends Person {
-  private Program program;
   private final Set<Subject> passedSubjects;
+  private Program program;
 
   public Student(String name, String id, Program program) {
     super(name, id);
@@ -39,15 +39,15 @@ public class Student extends Person {
 
   public void applyForProgram(Program newProgram) {
     if (this.meetsRequirements(newProgram)) {
-      System.out.println(this.getName() + " zapisał się na " + newProgram.getName() + ".");
+      System.out.println(this.getName() + " signed up for " + newProgram.getName() + ".");
       this.program = newProgram;
     } else
-      System.out.println(this.getName() + " nie spełnia wymagań dla kursu " + newProgram.getName() + "!");
+      System.out.println(this.getName() + " does not meet requirements for " + newProgram.getName() + "!");
   }
 
   public void finishProgram() {
     assert this.program != null;
-    System.out.println(this.getName() + " zdał kurs " + this.program.getName() + "!");
+    System.out.println(this.getName() + " passed " + this.program.getName() + " program!");
     this.passedSubjects.addAll(this.program.getSubjects());
     this.program = null;
   }

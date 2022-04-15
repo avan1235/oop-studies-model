@@ -35,6 +35,10 @@ public class StaffMember extends Person {
     return publication;
   }
 
+  public void teachNewSubject(Subject subject) {
+    this.subjectsTaught.add(subject);
+  }
+
   public void collaborate(Publication publication, StaffMember collaborator) {
     publication.addAuthors(collaborator);
     collaborator.authorPaper(publication);
