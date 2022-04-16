@@ -53,6 +53,9 @@ public class Main {
     //Worth noting that the following line will throw an exception
     //System.out.println(kindaStudentKindaNot.getPrograms());
 
+    final var exampleStudent = PersonFactory.createStudent("Adam", "Strong", "12345555980", "543678", new Program(2, "WPiA", "Law"));
+    usos.addPerson(exampleStudent);
+
     System.out.println(usos);
 
     //Purely to play with the implementation
