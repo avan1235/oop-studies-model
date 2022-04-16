@@ -2,11 +2,16 @@ package pl.edu.mimuw.usos;
 
 import java.util.ArrayList;
 
-public abstract class PersonFactory {
+public final class PersonFactory {
 
   private final static Program CS = new Program("MIMUW", "Computer Science");
   private final static Program MATH = new Program("MIMUW", "Math");
   private static int iterator = 1;
+
+  // This class should not be instantiated, therefore it is private.
+  private PersonFactory() {
+    throw new AssertionError("Suppress default constructor for noninstantiability");
+  }
 
   public static Student createStudent(String firstName, String lastName, String pesel, String number, Program program) {
     return new Student(firstName, lastName, pesel, iterator++, number, new Program(program));
