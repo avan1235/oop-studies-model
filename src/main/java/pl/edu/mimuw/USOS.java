@@ -10,7 +10,14 @@ public class USOS {
     }
 
     public Person findUser(String number){
-        return users.get(number).createCopy();
+        var per = users.get(number);
+        if(per!=null){
+            return per.createCopy();
+        }
+        else{
+            System.out.println("Wrong identification number: " + number);
+            return null;
+        }
     }
 
     public String addStudent(String firstName, String lastName){
