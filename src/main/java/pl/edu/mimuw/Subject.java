@@ -1,26 +1,29 @@
 package pl.edu.mimuw;
 
 public class Subject {
-  private String name,USOScode;
-  private int ECTS,lectureHours,classHours,labHours;
+  private String name, USOScode;
+  private double ECTS;
+  private int lectureHours, classHours, labHours;
   private Educator coordinator;
 
-  public Subject(){}
-  public Subject(String name,String USOScode)
-  {
-    this.name=name;this.USOScode=USOScode;
+  public Subject() {
   }
-  public Subject(String name,String USOScode,int ECTS,int lectureHours,int classHours,int labHours)
-  {
-    this(name,USOScode);
-    this.lectureHours=lectureHours;
-    this.classHours=classHours;
-    this.labHours=labHours;
+
+  public Subject(String name, String USOScode) {
+    this.name = name;
+    this.USOScode = USOScode;
   }
-  public Subject(String name,String USOScode,int ECTS,int lectureHours,int classHours,int labHours,Educator coordinator)
-  {
-    this(name,USOScode,ECTS,lectureHours,classHours,labHours);
-    this.coordinator=coordinator;
+
+  public Subject(String name, String USOScode, double ECTS, int lectureHours, int classHours, int labHours) {
+    this(name, USOScode);
+    this.lectureHours = lectureHours;
+    this.classHours = classHours;
+    this.labHours = labHours;
+  }
+
+  public Subject(String name, String USOScode, double ECTS, int lectureHours, int classHours, int labHours, Educator coordinator) {
+    this(name, USOScode, ECTS, lectureHours, classHours, labHours);
+    this.coordinator = coordinator;
   }
 
   public Educator getCoordinator() {
@@ -35,7 +38,7 @@ public class Subject {
     return USOScode;
   }
 
-  public int getECTS() {
+  public double getECTS() {
     return ECTS;
   }
 
@@ -63,7 +66,7 @@ public class Subject {
     this.USOScode = USOScode;
   }
 
-  public void setECTS(int ECTS) {
+  public void setECTS(double ECTS) {
     this.ECTS = ECTS;
   }
 
@@ -80,12 +83,11 @@ public class Subject {
   }
 
   public String toString(boolean detailed) {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append(this.getName())
       .append(", USOS code: ")
       .append(this.getUSOScode());
-    if(detailed)
-    {
+    if (detailed) {
       sb.append(", ECTS count: ")
         .append(this.getECTS())
         .append(", Lecture hours: ")
