@@ -24,7 +24,7 @@ public class Lecturer extends Person {
 	}
 	
 	public void addPublication(Publication publication) {
-		publications.add(publication);
+		this.publications.add(publication);
 	}
 	
 	@Override
