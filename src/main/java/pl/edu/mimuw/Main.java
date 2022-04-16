@@ -47,7 +47,7 @@ public class Main {
     Arrays.stream(jsimStudents).forEach(usos::addPerson);
     Arrays.stream(staff).forEach(usos::addPerson);
 
-    final Person kindaStudentKindaNot = PersonFactory.createCSStudent("Jan", "Kowalski", "12345678933", "543789");
+    final Person kindaStudentKindaNot = PersonFactory.createCSStudent("Pawel", "Polska", "12345128933", "241289");
     usos.addPerson(kindaStudentKindaNot);
     kindaStudentKindaNot.incrementYears();
     //Worth noting that the following line will throw an exception

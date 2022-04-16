@@ -1,8 +1,6 @@
 package pl.edu.mimuw.usos;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public abstract class PersonFactory {
 
