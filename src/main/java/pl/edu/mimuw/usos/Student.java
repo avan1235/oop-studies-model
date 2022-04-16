@@ -4,19 +4,29 @@ import java.util.ArrayList;
 
 public class Student extends Person {
   private final ArrayList<Program> programs;
-  private String number;
+  private final String number;
 
   public Student(String firstName, String lastName, String pesel, int index, String number, ArrayList<Program> programs) {
     super(firstName, lastName, pesel, index);
     this.number = number;
-    this.programs = programs;
+    this.programs = new ArrayList<>(programs);
   }
 
   public Student(String firstName, String lastName, String pesel, int index, String number, Program program) {
     super(firstName, lastName, pesel, index);
     this.number = number;
     this.programs = new ArrayList<Program>();
-    this.programs.add(program);
+    this.programs.add(new Program(program));
+  }
+
+  /**
+   * Increments all program's years.
+   */
+  @Override
+  public void incrementYears() {
+    for (Program program : this.programs) {
+      program.incrementYear();
+    }
   }
 
   @Override
@@ -24,10 +34,21 @@ public class Student extends Person {
     final var sb = new StringBuilder("Student ");
 
     sb.append(super.toString()).append(" ").append(number).append(" studies:\n");
-    for (Program program : programs) {
+    for (Program program : this.getPrograms()) {
       sb.append("\t\t").append(program.toString()).append("\n");
     }
 
     return sb.toString();
+  }
+
+  /**
+   * @return the copied list of programs.
+   */
+  private ArrayList<Program> getPrograms() {
+    final var programs = new ArrayList<Program>();
+
+    this.programs.stream().map(Program::new).forEach(programs::add);
+
+    return programs;
   }
 }

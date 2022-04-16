@@ -14,13 +14,21 @@ public abstract class Person {
     this.index = index;
   }
 
+  /**
+   * @return the complete name of the person.
+   */
   public String getFullName() {
     return this.firstName + " " + this.lastName;
   }
 
+  /**
+   * @return the id.
+   */
   public int getIndex() {
     return this.index;
   }
+
+  public abstract void incrementYears();
 
   @Override
   public String toString() {
