@@ -2,7 +2,7 @@ package pl.edu.mimuw;
 
 public class PersonFactory {
 
-  private static int indexNumber=0;
+  private static int indexNumber = 0;
 
   public static Student createStudent(String firstname, String lastname, String gender, String personalID) {
     indexNumber++;

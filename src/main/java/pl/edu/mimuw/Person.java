@@ -8,15 +8,15 @@ public abstract class Person {
   protected final int indexNumber;
 
   public Person(String forename, String lastname, String gender, String personalID, int indexNumber) {
-    this.forename=forename;
-    this.lastname=lastname;
-    this.gender=gender;
-    this.personalID=personalID;
-    this.indexNumber=indexNumber;
+    this.forename = forename;
+    this.lastname = lastname;
+    this.gender = gender;
+    this.personalID = personalID;
+    this.indexNumber = indexNumber;
   }
 
   public String getName() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append(this.forename).append(" ").append(this.lastname);
     return sb.toString();
   }
@@ -35,7 +35,7 @@ public abstract class Person {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append(this.getName()).append(", gender: ").append(this.gender).append(", ID: ").append(this.personalID).append(", index number: ").append(this.indexNumber);
     return sb.toString();
   }

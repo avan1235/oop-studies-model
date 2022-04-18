@@ -8,7 +8,7 @@ public class StaffMember extends Person {
 
   public StaffMember(String firstname, String lastname, String gender, String personalID, int indexNumber) {
     super(firstname, lastname, gender, personalID, indexNumber);
-    this.publications=new HashSet<>();
+    this.publications = new HashSet<>();
   }
 
   public void WritePublication(Publication pub) {
@@ -17,9 +17,9 @@ public class StaffMember extends Person {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Staff member ").append(super.toString()).append("\npublications:");
-    for(var pub: this.publications) {
+    for (var pub : this.publications) {
       sb.append("\n").append(pub.toString());
     }
     return sb.toString();

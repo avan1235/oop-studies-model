@@ -5,8 +5,8 @@ public class Publication {
   private final String subject;
 
   public Publication(String title, String subject) {
-    this.title=title;
-    this.subject=subject;
+    this.title = title;
+    this.subject = subject;
   }
 
   public String getSubject() {
@@ -19,7 +19,7 @@ public class Publication {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append(this.getTitle()).append(" subject: ").append(this.getSubject());
     return sb.toString();
   }

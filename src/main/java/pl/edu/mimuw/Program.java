@@ -6,9 +6,9 @@ public class Program {
   private final String major;
 
   public Program(int year, String faculty, String major) {
-    this.year=year;
-    this.faculty=faculty;
-    this.major=major;
+    this.year = year;
+    this.faculty = faculty;
+    this.major = major;
   }
 
   public void incremetYear() {
@@ -29,7 +29,7 @@ public class Program {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("faculty: ").append(faculty).append(", major: ").append(major).append(", year: ").append(year);
     return sb.toString();
   }

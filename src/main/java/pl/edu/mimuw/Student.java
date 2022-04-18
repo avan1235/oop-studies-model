@@ -7,17 +7,17 @@ public class Student extends Person {
 
   public Student(String firstname, String lastname, String gender, String personalID, int indexNumber) {
     super(firstname, lastname, gender, personalID, indexNumber);
-    this.programs=new ArrayList<Program>();
+    this.programs = new ArrayList<Program>();
   }
 
   public Student(String firstname, String lastname, String gender, String personalID, int indexNumber, Program program) {
     super(firstname, lastname, gender, personalID, indexNumber);
-    this.programs=new ArrayList<Program>();
+    this.programs = new ArrayList<Program>();
     programs.add(program);
   }
 
   public void incremetYears() {
-    for(var pro: this.programs) {
+    for (var pro : this.programs) {
       pro.incremetYear();
     }
   }
@@ -27,8 +27,8 @@ public class Student extends Person {
   }
 
   public ArrayList<Program> getPrograms() {
-    var list=new ArrayList<Program>();
-    for(var pro: this.programs) {
+    var list = new ArrayList<Program>();
+    for (var pro : this.programs) {
       list.add(new Program(pro.getYear(), pro.getFaculty(), pro.getMajor()));
     }
     return list;
@@ -36,9 +36,9 @@ public class Student extends Person {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Student ").append(super.toString()).append("\nprograms:");
-    for(var pro: this.programs) {
+    for (var pro : this.programs) {
       sb.append("\n").append(pro.toString());
     }
     return sb.toString();
