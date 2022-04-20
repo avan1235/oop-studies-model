@@ -2,6 +2,7 @@ package pl.edu.mimuw.usos;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Staff extends Person {
   private final String position;
@@ -65,10 +66,6 @@ public class Staff extends Person {
    * @return the copied set of publications.
    */
   private Set<Publication> getPublications() {
-    final var publications = new HashSet<Publication>();
-
-    this.publications.stream().map(Publication::new).forEach(publications::add);
-
-    return publications;
+    return this.publications.stream().map(Publication::new).collect(Collectors.toSet());
   }
 }

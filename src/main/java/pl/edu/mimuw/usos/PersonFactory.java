@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public final class PersonFactory {
 
-  private final static Program CS = new Program("MIMUW", "Computer Science");
-  private final static Program MATH = new Program("MIMUW", "Math");
+  private static final Program CS = new Program("MIMUW", "Computer Science");
+  private static final Program MATH = new Program("MIMUW", "Math");
   private static int iterator = 1;
 
   // This class should not be instantiated, therefore it is private.

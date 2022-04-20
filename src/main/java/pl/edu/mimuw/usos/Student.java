@@ -1,9 +1,11 @@
 package pl.edu.mimuw.usos;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Student extends Person {
-  private final ArrayList<Program> programs;
+  private final List<Program> programs;
   private final String number;
 
   public Student(String firstName, String lastName, String pesel, int index, String number, ArrayList<Program> programs) {
@@ -44,11 +46,7 @@ public class Student extends Person {
   /**
    * @return the copied list of programs.
    */
-  private ArrayList<Program> getPrograms() {
-    final var programs = new ArrayList<Program>();
-
-    this.programs.stream().map(Program::new).forEach(programs::add);
-
-    return programs;
+  private List<Program> getPrograms() {
+    return this.programs.stream().map(Program::new).collect(Collectors.toList());
   }
 }

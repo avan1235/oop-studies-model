@@ -4,6 +4,7 @@ import pl.edu.mimuw.usos.*;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class Main {
 
@@ -28,12 +29,13 @@ public class Main {
       PersonFactory.createStaffMember("Adam", "Jang", "223453529033", "Programming Teacher", "Master", "CS Exercises")
     };
 
+    Predicate<Staff> piotr_ziemiak = s -> Objects.equals(s.getFullName(), "Piotr Ziemiak");
     Arrays.stream(staff)
-      .filter(s -> Objects.equals(s.getFullName(), "Piotr Ziemiak"))
+      .filter(piotr_ziemiak)
       .findFirst()
       .ifPresent(s -> s.addPublication("Foundation of Mathematics"));
     Arrays.stream(staff)
-      .filter(s -> Objects.equals(s.getFullName(), "Piotr Ziemiak"))
+      .filter(piotr_ziemiak)
       .findFirst()
       .ifPresent(s -> s.addPublication(new Publication("Discreet Mathematics and its Applications", 16)));
     Arrays.stream(staff)
