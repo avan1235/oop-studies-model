@@ -16,28 +16,32 @@ public class Program {
     participants = new ArrayList<Integer>();
   }
 
-  public String getName(){
+  public String getName() {
     return this.name;
   }
-  public Integer getLeaderIndex(){
+
+  public Integer getLeaderIndex() {
     return this.leaderIndex;
   }
-  public ArrayList<Integer> getParticipantsIds(){
+
+  public ArrayList<Integer> getParticipantsIds() {
     return new ArrayList<Integer>(this.participants);
   }
-  public ArrayList<Integer> getEmployeesIds(){
+
+  public ArrayList<Integer> getEmployeesIds() {
     return new ArrayList<Integer>(this.employees);
   }
 
-  public void addParticipant(Integer participantId){
+  public void addParticipant(Integer participantId) {
     participants.add(participantId);
   }
-  public void addEmployees(Integer employeesId){
+
+  public void addEmployees(Integer employeesId) {
     employees.add(employeesId);
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "program name: " + this.name;
   }
 }

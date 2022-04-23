@@ -15,23 +15,24 @@ public class Employee extends Person {
     this.publications = new ArrayList<Publication>();
   }
 
-  public void addProgram(Integer programId){
+  public void addProgram(Integer programId) {
     this.programsIds.add(programId);
   }
 
-  public void addPublication(Publication publication){
+  public void addPublication(Publication publication) {
     this.publications.add(publication);
   }
 
-  public ArrayList<Integer> getProgramsIds(){
+  public ArrayList<Integer> getProgramsIds() {
     return new ArrayList<Integer>(this.programsIds);
   }
-  public ArrayList<Publication> getPublications(){
+
+  public ArrayList<Publication> getPublications() {
     return new ArrayList<Publication>(this.publications);
   }
 
 
-  public String employeeDetailedInfo(){
+  public String employeeDetailedInfo() {
     return basicInfo() + ", publicated: " + publications;
   }
 

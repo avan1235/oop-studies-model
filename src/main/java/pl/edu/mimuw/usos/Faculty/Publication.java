@@ -8,8 +8,9 @@ public class Publication {
     this.name = name;
     this.authors = authors;
   }
+
   @Override
-  public String toString(){
+  public String toString() {
     return "Publication - " + name;
   }
 }

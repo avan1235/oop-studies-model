@@ -15,13 +15,14 @@ public abstract class Person {
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return firstName + " " + secondName;
   }
-  protected String basicInfo(){
+
+  protected String basicInfo() {
     return firstName + " " + secondName + ", birth at: " + birthDate;
   }
 
-  public  abstract ArrayList<Integer> getProgramsIds();
+  public abstract ArrayList<Integer> getProgramsIds();
 
 }

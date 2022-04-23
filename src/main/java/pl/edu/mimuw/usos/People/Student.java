@@ -13,22 +13,23 @@ public class Student extends Person {
     this.studyStatus = studyStatus;
   }
 
-  public void addProgram(Integer programId){
+  public void addProgram(Integer programId) {
     this.programsIds.add(programId);
   }
 
-  public void changeStatus(String status){
+  public void changeStatus(String status) {
     this.studyStatus = status;
   }
 
-  public String getStudyStatus(){
+  public String getStudyStatus() {
     return this.studyStatus;
   }
-  public ArrayList<Integer> getProgramsIds(){
+
+  public ArrayList<Integer> getProgramsIds() {
     return new ArrayList<Integer>(this.programsIds);
   }
 
-  public String studentDetailedInfo(){
+  public String studentDetailedInfo() {
     return basicInfo() + ", has status: " + studyStatus;
   }
 }
